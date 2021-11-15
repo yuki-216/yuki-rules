@@ -1,0 +1,71 @@
+payload:
+  #关键词
+  - DOMAIN-KEYWORD,update
+  - DOMAIN-KEYWORD,download
+  - DOMAIN-KEYWORD,img
+  - DOMAIN-KEYWORD,video
+  #哔哩哔哩
+  - DOMAIN,upos-hz-mirrorakam.akamaized.net
+  - DOMAIN-SUFFIX,hdslb.com
+  #腾讯系
+  - DOMAIN-SUFFIX,v.smtcdns.com #腾讯视频
+  - DOMAIN-SUFFIX,stream.qqmusic.qq.com   #qq音乐
+  - DOMAIN,mugc.music.tc.qq.com 
+  - DOMAIN,wegame.douyu.livelink.qq.com  #wegame 逗鱼
+  - DOMAIN,ugc-svp.wegame.com.cn #wegame更新
+  - DOMAIN,i.news.qq.com #腾讯新闻图片
+  
+  #网易系
+  - DOMAIN-SUFFIX,pdl.wow.battlenet.com.cn #战网更新
+  - DOMAIN-KEYWORD,vod.stu.126.net #mooc
+  - DOMAIN-KEYWORD,image.nosdn.127.net
+
+  - DOMAIN-SUFFIX,assets2.xboxlive.cn #xbox下载
+  #百度系
+  - DOMAIN,f7.baidu.com #百度图片以及视频
+  - DOMAIN,f6.baidu.com
+  - DOMAIN,f5.baidu.com
+  - DOMAIN,f4.baidu.com
+  - DOMAIN,f3.baidu.com
+  - DOMAIN,f2.baidu.com
+  - DOMAIN,f1.baidu.com
+  - DOMAIN,f0.baidu.com
+  - DOMAIN,t15.baidu.com
+  - DOMAIN,t14.baidu.com
+  - DOMAIN,t13.baidu.com
+  - DOMAIN,t12.baidu.com
+  - DOMAIN,t11.baidu.com
+  - DOMAIN,t10.baidu.com
+  - DOMAIN,t9.baidu.com
+  - DOMAIN,t8.baidu.com
+  - DOMAIN,t7.baidu.com
+  - DOMAIN,t6.baidu.com
+  - DOMAIN,t5.baidu.com
+  - DOMAIN,t4.baidu.com
+  - DOMAIN,t3.baidu.com
+  - DOMAIN,t2.baidu.com
+  - DOMAIN,t1.baidu.com
+  - DOMAIN,t0.baidu.com
+  - DOMAIN-SUFFIX,vd9.bdstatic.com
+  - DOMAIN-SUFFIX,vd8.bdstatic.com
+  - DOMAIN-SUFFIX,vd7.bdstatic.com
+  - DOMAIN-SUFFIX,vd6.bdstatic.com
+  - DOMAIN-SUFFIX,vd5.bdstatic.com
+  - DOMAIN-SUFFIX,vd4.bdstatic.com
+  - DOMAIN-SUFFIX,vd3.bdstatic.com
+  - DOMAIN-SUFFIX,vd2.bdstatic.com
+  - DOMAIN-SUFFIX,vd1.bdstatic.com
+  - DOMAIN-SUFFIX,vd0.bdstatic.com
+  - DOMAIN-SUFFIX,baidupan.com #百度云盘
+
+  #阿里系
+  - DOMAIN-KEYWORD,ott.cibntv.net #优酷视频
+  - DOMAIN-KEYWORD,material.alicdn.com #alicdn 视频以及图片
+  - DOMAIN,g.alicdn.com
+
+
+  - DOMAIN,qny.smzdm.com #什么值得买视频、图片
+  - DOMAIN,qnam.smzdm.com
+  - DOMAIN,qnam.smzdm.com
+  - DOMAIN,qna.smzdm.com
+  - DOMAIN,res.smzdm.com

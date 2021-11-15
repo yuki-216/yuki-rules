@@ -1,8 +1,3 @@
 payload:
-  - PROCESS-NAME,steam
-  - PROCESS-NAME,battle
-  - PROCESS-NAME,hearthstone
-  - PROCESS-NAME,WeGameLauncher
-  - PROCESS-NAME,LOL
-  - PROCESS-NAME,genshin
-  - PROCESS-NAME,WeMeat
+  - PROCESS-NAME,steam.exe
+  - PROCESS-NAME,battle.net.exe

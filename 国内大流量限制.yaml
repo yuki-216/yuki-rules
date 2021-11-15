@@ -5,8 +5,8 @@ payload:
   - DOMAIN-KEYWORD,img
   - DOMAIN-KEYWORD,video
   #哔哩哔哩
-  - DOMAIN,upos-hz-mirrorakam.akamaized.net
-  - DOMAIN-SUFFIX,hdslb.com
+#  - DOMAIN,upos-hz-mirrorakam.akamaized.net
+#  - DOMAIN-SUFFIX,hdslb.com
   #腾讯系
   - DOMAIN-SUFFIX,v.smtcdns.com #腾讯视频
   - DOMAIN-SUFFIX,stream.qqmusic.qq.com   #qq音乐

@@ -64,7 +64,7 @@ rule-providers:
   streamingcn:
     type: file
     behavior: classical
-    url: https://gitee.com/yuki216/yuki-rules/blob/release/streamingcn
+    url: https://gitee.com/yuki216/yuki-rules/raw/release/streamingcn
     path: ./ruleset/streamingcn.yaml
     interval: 3600
   reject2:
@@ -94,7 +94,7 @@ rule-providers:
   reject:
     type: http
     behavior: domain
-    url: https://gitee.com/yuki216/yuki-rules/blob/release/reject.txt
+    url: https://gitee.com/yuki216/yuki-rules/raw/release/reject.txt
     path: ./ruleset/reject.yaml
     interval: 3600
   private:
@@ -106,7 +106,7 @@ rule-providers:
   cnip:
     type: http
     behavior: ipcidr
-    url: https://gitee.com/yuki216/yuki-rules/blob/release/%20cnip
+    url: https://gitee.com/yuki216/yuki-rules/raw/release/%20cnip
     path: ./ruleset/chinav4ip.yaml
     interval: 3600
   cn:

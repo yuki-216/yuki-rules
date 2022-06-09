@@ -1,30 +1,10 @@
-dns:
-  enable: true
-  ipv6: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  nameserver:
-    - 202.118.1.29
-    - 1.2.4.8
-    - 114.114.114.114
-    - 223.5.5.5
-  fake-ip-filter:
-    - dns.msftncsi.com
-    - www.msftncsi.com
-    - www.msftconnecttest.com
-    - "*.lan"
-    - localhost.ptlogin2.qq.com
-tun:
-  enable: true
-  stack: gvisor
-  dns-hijack:
-    - 198.18.0.2:53
-  auto-route: true
-  auto-detect-interface: true
+mode: rule
+log-level: info
+ipv6: true
 proxies:
-  - name: vps代理 v6
-    server: 2001:19f0:7001:1d60:5400:03ff:feae:3e9e
-    port: 9509
+  - name: v6
+    server: 2001:19f0:4400:77f8:5400:03ff:fedb:906e
+    port: "9509"
     type: ssr
     cipher: aes-256-cfb
     password: neu216
@@ -33,9 +13,9 @@ proxies:
     protocol-param: ""
     obfs-param: ""
     udp: true
-  - name: vps代理 v4 警告
-    server: 207.148.98.28
-    port: 9509
+  - name: v4
+    server: 45.32.117.3
+    port: "9509"
     type: ssr
     cipher: aes-256-cfb
     password: neu216
@@ -45,9 +25,14 @@ proxies:
     obfs-param: ""
     udp: true
 proxy-groups:
+  - name: v4/v6
+    proxies:
+      - v6
+      - v4
+    type: select
   - name: 国内
     proxies:
-      - v6或v4 代理
+      - v4/v6
       - DIRECT
     type: select
   - name: 国内小流量
@@ -55,98 +40,101 @@ proxy-groups:
       - 国内
       - DIRECT
     type: select
-  - name: v6或v4 代理
+  - name: 国内媒体
     proxies:
-      - vps代理 v6
-      - vps代理 v4 警告
-    type: select
-  - name: ipv6资源
-    proxies:
+      - 国内
       - DIRECT
-      - vps代理 v4 警告
+    type: select
+  - name: 国内大流量限制
+    proxies:
+      - v6
+      - DIRECT
     type: select
   - name: 过滤拦截
     proxies:
       - REJECT
       - 国内
     type: select
-  - name: 国内大流量限制
+  - name: 软件直连(目前仅炉石、腾讯会议)
     proxies:
-      - v6或v4 代理
       - DIRECT
-    type: select
-  - name: 软件直连
-    proxies:
-      - v6或v4 代理
-      - DIRECT
+      - 国内
     type: select
 rule-providers:
-  applications:
+  streamingcn:
     type: file
     behavior: classical
-    path: ./ruleset/applications.yaml
-  applications2:
-    type: file
-    behavior: classical
-    path: ./ruleset/applications2.yaml
+    url: https://gitee.com/yuki216/yuki-rules/blob/release/streamingcn
+    path: ./ruleset/streamingcn.yaml
+    interval: 3600
   reject2:
-    type: file
-    behavior: classical
-    path: ./ruleset/过滤拦截.yaml
-  国内大流量限制:
-    type: file
-    behavior: classical
-    path: ./ruleset/国内大流量限制.yaml
-  国内小流量:
-    type: file
-    behavior: classical
-    path: ./ruleset/国内小流量.yaml
-  校园网相关:
-    type: file
-    behavior: classical
-    path: ./ruleset/校园网相关.yaml
-  lancidr:
     type: http
-    behavior: ipcidr
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt
-    path: ./ruleset/lancidr.yaml
-    interval: 86400
+    behavior: classical
+    url: https://gitee.com/yuki216/yuki-rules/raw/release/reject.yaml
+    path: ./ruleset/reject2.yaml
+    interval: 3600
+  国内大流量限制:
+    type: http
+    behavior: classical
+    url: https://gitee.com/yuki216/yuki-rules/raw/release/limit.yaml
+    path: ./ruleset/国内大流量限制.yaml
+    interval: 3600
+  国内小流量:
+    type: http
+    behavior: classical
+    url: https://gitee.com/yuki216/yuki-rules/raw/release/open.yaml
+    path: ./ruleset/国内小流量.yaml
+    interval: 3600
+  校园网相关:
+    type: http
+    behavior: classical
+    url: https://gitee.com/yuki216/yuki-rules/raw/release/neu.yaml
+    path: ./ruleset/校园网相关.yaml
+    interval: 3600
   reject:
     type: http
     behavior: domain
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
+    url: https://gitee.com/yuki216/yuki-rules/blob/release/reject.txt
     path: ./ruleset/reject.yaml
-    interval: 86400
-  proxy:
-    type: http
-    behavior: domain
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt
-    path: ./ruleset/proxy.yaml
-    interval: 86400
+    interval: 3600
   private:
     type: http
     behavior: domain
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt
+    url: https://gitee.com/yuki216/yuki-rules/raw/release/private.yaml
     path: ./ruleset/private.yaml
-    interval: 86400
+    interval: 3600
   cnip:
     type: http
     behavior: ipcidr
-    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Extra/ChinaIP.yaml
+    url: https://gitee.com/yuki216/yuki-rules/blob/release/%20cnip
     path: ./ruleset/chinav4ip.yaml
-    interval: 86400
+    interval: 3600
+  cn:
+    type: http
+    behavior: domain
+    url: https://gitee.com/yuki216/yuki-rules/raw/release/cn.yaml
+    path: ./ruleset/cn.yaml
+    interval: 3600
+  proxy:
+    type: http
+    behavior: classical
+    url: https://gitee.com/yuki216/yuki-rules/raw/release/proxy.yaml
+    path: ./ruleset/proxy.yaml
+    interval: 3600
 rules:
+  - RULE-SET,校园网相关,DIRECT
+  - PROCESS-NAME,Hearthstone.exe,软件直连(目前仅炉石、腾讯会议)
+  - PROCESS-NAME,wemeetapp.exe,软件直连(目前仅炉石、腾讯会议)
+  - PROCESS-NAME,qbittorrent.exe,软件直连(目前仅炉石、腾讯会议)
+  - RULE-SET,proxy,v4/v6
   - RULE-SET,private,DIRECT
-  - RULE-SET,applications,DIRECT
   - RULE-SET,reject,过滤拦截
   - RULE-SET,reject2,过滤拦截
-  - RULE-SET,proxy,v6或v4 代理
+  - IP-CIDR6,::/0,DIRECT
   - RULE-SET,国内大流量限制,国内大流量限制
-  - RULE-SET,applications2,软件直连
+  - RULE-SET,streamingcn,国内媒体
   - RULE-SET,国内小流量,国内小流量
-  - RULE-SET,校园网相关,DIRECT
-  - RULE-SET,lancidr,DIRECT
-  - IP-CIDR6,::/0,ipv6资源
   - RULE-SET,cnip,国内
+  - RULE-SET,cn,国内
   - GEOIP,CN,国内
-  - MATCH,v6或v4 代理
+  - MATCH,v4/v6

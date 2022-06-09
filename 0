@@ -92,11 +92,9 @@ rule-providers:
     path: ./ruleset/校园网相关.yaml
     interval: 3600
   reject:
-    type: http
+    type: fiel
     behavior: domain
-    url: https://gitee.com/yuki216/yuki-rules/raw/release/reject.yaml
     path: ./ruleset/reject.yaml
-    interval: 3600
   private:
     type: http
     behavior: domain

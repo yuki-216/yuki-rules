@@ -92,7 +92,7 @@ rule-providers:
     path: ./ruleset/校园网相关.yaml
     interval: 3600
   reject:
-    type: fiel
+    type: file
     behavior: domain
     path: ./ruleset/reject.yaml
   private:

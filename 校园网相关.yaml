@@ -1,7 +1,11 @@
 payload:
+  - DOMAIN,ipgw.neu.edu.cn
   - DOMAIN-SUFFIX,npupt.com
+  - DOMAIN-SUFFIX,neu6.edu.cn
   - DOMAIN-SUFFIX,neu.edu.cn
   - IP-CIDR,219.216.96.4/32
   - IP-CIDR,202.118.1.87/32
   - IP-CIDR,202.199.14.2/32
   - IP-CIDR,219.216.96.176/32
+  - IP-CIDR,202.118.1.29/32
+  - IP-CIDR,202.118.1.53/32

@@ -4,9 +4,9 @@ payload:
   - DOMAIN-KEYWORD,download
   - DOMAIN-KEYWORD,img
   - DOMAIN-KEYWORD,video
-  #哔哩哔哩
-#  - DOMAIN,upos-hz-mirrorakam.akamaized.net
-#  - DOMAIN-SUFFIX,hdslb.com
+  #bilibili
+  - DOMAIN-SUFFIX,hdslb.com #静态资源
+  - DOMAIN-SUFFIX,ourdvsss.com #直播
   #腾讯系
   - DOMAIN-SUFFIX,v.smtcdns.com #腾讯视频
   - DOMAIN-SUFFIX,stream.qqmusic.qq.com   #qq音乐
@@ -14,13 +14,11 @@ payload:
   - DOMAIN,wegame.douyu.livelink.qq.com  #wegame 逗鱼
   - DOMAIN,ugc-svp.wegame.com.cn #wegame更新
   - DOMAIN,i.news.qq.com #腾讯新闻图片
-  
   #网易系
   - DOMAIN-SUFFIX,pdl.wow.battlenet.com.cn #战网更新
   - DOMAIN-KEYWORD,vod.stu.126.net #mooc
   - DOMAIN-KEYWORD,image.nosdn.127.net
 
-  - DOMAIN-SUFFIX,assets2.xboxlive.cn #xbox下载
   #百度系
   - DOMAIN,f7.baidu.com #百度图片以及视频
   - DOMAIN,f6.baidu.com
@@ -56,16 +54,20 @@ payload:
   - DOMAIN-SUFFIX,vd2.bdstatic.com
   - DOMAIN-SUFFIX,vd1.bdstatic.com
   - DOMAIN-SUFFIX,vd0.bdstatic.com
-  - DOMAIN-SUFFIX,baidupan.com #百度云盘
+  - DOMAIN-SUFFIX,baidupan.com #百度网盘
+  - DOMAIN-SUFFIX,baidupcs.com #百度网盘
 
   #阿里系
   - DOMAIN-KEYWORD,ott.cibntv.net #优酷视频
   - DOMAIN-KEYWORD,material.alicdn.com #alicdn 视频以及图片
   - DOMAIN,g.alicdn.com
 
-
   - DOMAIN,qny.smzdm.com #什么值得买视频、图片
-  - DOMAIN,qnam.smzdm.com
   - DOMAIN,qnam.smzdm.com
   - DOMAIN,qna.smzdm.com
   - DOMAIN,res.smzdm.com
+  - DOMAIN-SUFFIX,assets2.xboxlive.cn #xbox下载
+  - DOMAIN-SUFFIX,steamcontent.com #steam下载
+  - DOMAIN,tlu.dl.delivery.mp.microsoft.com #microsoft store
+  - DOMAIN,objects.githubusercontent.com #github
+  - DOMAIN,media-jxnc-person.jxoss.xstore.ctyun.cn #天翼云

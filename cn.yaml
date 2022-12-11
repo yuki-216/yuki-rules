@@ -1,3 +1,4 @@
 payload:
   - DOMAIN-SUFFIX,akamaized.net
   - DOMAIN,cn.actual.battle.net
+  - DOMAIN-SUFFIX,nvidia.cn

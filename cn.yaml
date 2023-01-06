@@ -3,3 +3,4 @@ payload:
   - DOMAIN,cn.actual.battle.net
   - DOMAIN-SUFFIX,nvidia.cn
   - DOMAIN-SUFFIX,steamcontent.com
+  - DOMAIN,sdlc-esd.oracle.com
